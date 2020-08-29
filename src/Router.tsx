@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { withPresenter } from './ui/presenter/withPresenter';
 import { PresenterFactory } from './ui/presenter/PresenterFactory';
-import GamePage from './ui/GamePage';
+import GamePage from './ui/game/GamePage';
 
 const presenterFactory = new PresenterFactory();
 

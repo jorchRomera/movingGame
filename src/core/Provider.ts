@@ -1,18 +1,20 @@
-import { GetChip } from './useCases/GetChip';
-import { InMemoryChipGetter } from './infrastructure/inMemory/InMemoryChipGetter';
-import { InMemoryBoardGetter } from './infrastructure/inMemory/InMemoryBoardGetter';
-import { GetBoard } from './useCases/GetBoard';
+import { InMemoryGameService } from './infrastructure/inMemory/InMemoryGameService';
+import { GetGame } from './useCases/GetGame';
+import { MoveRight } from './useCases/MoveRight';
+import { MoveLeft } from './useCases/MoveLeft';
+import { MoveUp } from './useCases/MoveUp';
+import { MoveDown } from './useCases/MoveDown';
 
 export class Provider {
-    static getChip() { return new GetChip(D.chipGetter()); }
-
-    static getBoard() { return new GetBoard(D.boardGetter()); }
+    static getGame() { return new GetGame(D.gameService()); }
+    static moveRight() { return new MoveRight(D.gameService()); }
+    static moveLeft() { return new MoveLeft(D.gameService()); }
+    static moveUp() { return new MoveUp(D.gameService()); }
+    static moveDown() { return new MoveDown(D.gameService()); }
 }
 
 class Dependencies {
-    static chipGetter() { return this.singleton('chipGetter', () => new InMemoryChipGetter()); }
-
-    static boardGetter() { return this.singleton('boardGetter', () => new InMemoryBoardGetter()); }
+    static gameService() { return this.singleton('gameService', () => new InMemoryGameService()); }
 
     static singleton<T>(name: string, build: () => T): T {
         if (!this._singleInstances[name]) {

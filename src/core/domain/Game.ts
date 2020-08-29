@@ -2,14 +2,14 @@ import { Board } from './Board';
 import { Chip } from './Chip';
 
 export interface Game {
-    gameStatus: GameStatus;
+    status: GameStatus;
     movesDone: number;
     movesLeft: number;
     board: Board;
     chip: Chip;
 }
 
-enum GameStatus {
+export enum GameStatus {
     playing = 'playing',
     win = 'win',
     lose = 'lose',
