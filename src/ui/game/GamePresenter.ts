@@ -1,4 +1,3 @@
-import { BoardVM } from './BoardVM';
 import { CellVM } from './CellVM';
 import { Cell } from '../../core/domain/Cell';
 import { Game } from '../../core/domain/Game';
@@ -10,11 +9,7 @@ import { MoveUp } from '../../core/useCases/MoveUp';
 import { MoveDown } from '../../core/useCases/MoveDown';
 
 export interface GameView {
-    updateBoard(board: BoardVM): void;
     updateGame(game: GameVM): void;
-    updateChipPosition(chip: number[]): void;
-    updateGameStatus(gameStatus: string): void;
-    updateMoves(movesDone: number, movesLeft: number): void;
 }
 
 export class GamePresenter {

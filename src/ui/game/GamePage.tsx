@@ -5,7 +5,6 @@ import { GamePresenter, GameView } from './GamePresenter';
 import { Presentable } from '../presenter/Presentable';
 import Cell from './Cell';
 import Chip from './Chip';
-import { BoardVM } from './BoardVM';
 import { GameVM } from './GameVM';
 
 export default class GamePage extends Presentable<GamePresenter, State> implements GameView {
@@ -47,22 +46,6 @@ export default class GamePage extends Presentable<GamePresenter, State> implemen
 
     updateGame(game: GameVM) {
         this.setState({ game });
-    }
-
-    updateBoard(board:BoardVM) {
-        this.setState({ board });
-    }
-
-    updateChipPosition(chipPosition: number[]) {
-        this.setState({ chipPosition });
-    }
-
-    updateGameStatus(gameStatus: string) {
-        this.setState({ gameStatus });
-    }
-
-    updateMoves(movesDone: number, movesLeft: number): void {
-        this.setState({ movesDone, movesLeft});
     }
 
     private renderChip(row: number, column: number) {
