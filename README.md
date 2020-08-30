@@ -1,5 +1,6 @@
 # Decisions
 About Architecture: I used an MVP (Model-View-Presenter) mixed up with Clean Architecture(https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) to have a reusable front end (You can re-use everything excepts the views if you want to change react for react native, vue, backbone, have a console interface, etc...) and it's super easy to test.
+
 About logic responsibility: All the game logic is located in the InMemoryGameService. Why do you ask? If I had a backend, I would have all my models there with them own logic and the front end with just the presentation logic. Because I hadn't a backend, I mimic it with this service, which could be easily replaced with a real HTTP implementation that connects to an API, modifying and returning the state of the game.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
