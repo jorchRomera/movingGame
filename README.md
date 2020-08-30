@@ -1,8 +1,15 @@
+# Decisions
+About Architecture: I used an MVP (Model-View-Presenter) mixed up with Clean Architecture(https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) to have a reusable front end (You can re-use everything excepts the views if you want to change react for react native, vue, backbone, have a console interface, etc...) and it's super easy to test.
+About logic responsibility: All the game logic is located in the InMemoryGameService. Why do you ask? If I had a backend, I would have all my models there with them own logic and the front end with just the presentation logic. Because I hadn't a backend, I mimic it with this service, which could be easily replaced with a real HTTP implementation that connects to an API, modifying and returning the state of the game.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `yarn`
+To install all the dependencies. Do it, before run "yarn start".
 
 ### `yarn start`
 
@@ -26,16 +33,6 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Learn More
 
